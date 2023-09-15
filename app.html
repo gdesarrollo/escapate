@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <title>Document</title>
+</head>
+
+<body class="bg-primary p-2 m-0 border-0 bd-example m-0 border-0 animate__animated animate__fadeIn">
+  <!-- Example Code -->
+
+
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">ESCAPATE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+        aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+        aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu Principal</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body bg-dark">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" onclick="opcion(this);">Avion</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" onclick="opcion(this);">Barco</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" onclick="opcion(this);">Autobus</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Salir</a>
+            </li>
+
+          </ul>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </nav>
+  <div class="row ">
+    <div class="col-lg-5 text-center mx-auto  mt-5">
+      <img src="imagenes/imagenv1.png" alt="" width="55%" class="mb-1 mt-1" id="pantalla1">
+      <div id="pantalla2" style="display: none;">
+        <h2>
+          Usted Decidio Viajar en <span id="viaje"></span>          
+        </h2>
+        <div class="form-group">
+          <label for="">Fecha</label>
+          <input type="date" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Destino</label>
+          <input type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <button class="btn btn-success w-100">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Example Code -->
+
+  <script src="js/bootstrap.bundle.js"></script>
+  <script src="js/jquery3.js"></script>
+  <script src="js/jquery.mask.js"></script>
+  <script>
+    function opcion(e) {
+      a = e.textContent;
+      document.getElementById("pantalla2").style.display="block";
+      document.getElementById("pantalla1").style.display="none";
+      if (a=="Avion") {
+       document.getElementById("viaje").innerHTML="Avion";        
+      }
+      if (a=="Barco") {
+       document.getElementById("viaje").innerHTML="Barco";        
+      }
+      if (a=="Autobus") {
+       document.getElementById("viaje").innerHTML="Autobus";        
+      }
+
+    }
+  </script>
+
+</body>
+
+
+</html>
